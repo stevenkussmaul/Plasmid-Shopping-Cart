@@ -180,10 +180,11 @@ h2 {
 }
 
 .form-title {
+    margin-top: 0;
     font-size: 20px;
 }
 
-.checkout-item {
+.item-slot {
     border-bottom: 1px solid gray;
     padding: 5px;
 }
@@ -223,10 +224,6 @@ button:hover {
     padding: 5px;
     display: none;
 }
-
-/* .total {
-
-} */
 
 .payment-btn {
     color: #fff;
