@@ -99,8 +99,10 @@ const populateCart = () => {
 
     for (let i=0; i < inCart.length; i++) {
         $(".cart-items").prepend(`
+        <section class="item-slot">
         <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
         <img class="delete-item" src="images/delete.png">
+        </section>
         `)
     }
 }
