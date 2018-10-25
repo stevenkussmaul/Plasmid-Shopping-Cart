@@ -96,21 +96,38 @@ const pageSetup = () => {
 const populateCart = () => {
 
     const emptyCart= $(".cart-items");
-    let total = 0;
+    let subtotal = 0;
+    let tax = subtotal * .06;
+    let total = subtotal + tax;
 
     emptyCart.html(""); // clears container
 
+
+
     for (let i=0; i < inCart.length; i++) {
+        
         $(".cart-items").prepend(`
         <section class="item-slot">
-        <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
-        <img class="delete-item" src="images/delete.png">
+            <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
+            <img class="delete-item" src="images/delete.png">
         </section>
-        `)
-        total += inCart[i].price;
+        `);
+
+        subtotal += inCart[i].price;
         $(".subtotal").html("") //clears previous subtotal
-        $(".cart-items").after(`<p class="subtotal" >Subtotal: $${total}</p>
-        `)
+        $(".cart-items").after(`<p class="subtotal" >Subtotal: $${subtotal}</p>
+        `);
+
+        // $(".form-title").after(`
+        //     <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
+        // `);
+
+        // <p>Subtotal: ${subtotal}</p>
+        // <p>Tax: ${tax}</p>
+        // <p>Total: ${total}</p>
+
+
+
     
     }
 
