@@ -127,8 +127,8 @@ const populateCart = () => {
         // <p>Tax: ${tax}</p>
         // <p>Total: ${total}</p>
     }
-
-
+}
+    
     $(document).on("click", ".add-to-cart", (event) => {
         let cartItem = $(event.target).attr("id");
         inCart.push(productList[cartItem]);
