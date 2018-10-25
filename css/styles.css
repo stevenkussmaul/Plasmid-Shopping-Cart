@@ -4,6 +4,35 @@ body {
     background-position: center;
     background-size: 100%;
 }
+
+.border {
+    height: 20px;
+}
+
+.b-top-left {
+    position: absolute;
+    top: -7px;
+    left: -13px;
+}
+
+.b-top-right {
+    position: absolute;
+    top: -7px;
+    right: -13px;
+}
+
+.b-bot-left {
+    position: absolute;
+    bottom: -7px;
+    left: -13px;
+}
+
+.b-bot-right {
+    position: absolute;
+    bottom: -7px;
+    right: -13px;
+}
+
 /* header formatting */
 
 /* .logo-placehold {
@@ -81,6 +110,8 @@ h2 {
 /* product formatting */
 
 .flex-container {
+    position: relative;
+    border: 1px solid #C6C487;
     width: 100vw;
     max-width: 600px;
     margin: 0 auto;
@@ -88,10 +119,10 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* background-color: rgba(10, 34, 37, 0.6); */
-    /* box-shadow: inset 0px 0px 20px rgba(0,0,0,0.5); */
-    background-image: url("../images/border-bg-01.svg");
-    background-size: 700px;
+    background-color: rgba(10, 34, 37, 0.6);
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.5);
+    /* background-image: url("../images/border-bg-01.svg");
+    background-size: 700px; */
 }
 
 .vigor {
@@ -137,7 +168,7 @@ h2 {
 /* Cart */
 
 .cart-container {
-    display: none;
+    /* display: none; */
     background-color: rgba(37, 36, 36, 0.9);
     color: #fff;
     width: 20%;
@@ -190,11 +221,12 @@ button:hover {
     right: 30%;
     width: 40%;
     padding: 5px;
+    display: none;
 }
 
-.total {
+/* .total {
 
-}
+} */
 
 .payment-btn {
     color: #fff;
@@ -215,6 +247,7 @@ button:hover {
     right: 30%;
     width: 40%;
     padding: 5px;
+    display: none;
 }
 
 .payment-form {
@@ -251,6 +284,7 @@ button:hover {
     right: 30%;
     width: 40%;
     padding: 5px;
+    display: none;
 }
 
 /* media queries */

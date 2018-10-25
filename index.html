@@ -17,7 +17,7 @@
         <!-- <img class="logo" src=""> -->
         <img class="cart" src="images/baseline-shopping_cart-24px.svg">
         <!-- <div class="logo-placehold"> -->
-            <img class="logo" src="images/veni-vidi-vigor-logo.png">
+        <img class="logo" src="images/veni-vidi-vigor-logo.png">
         <!-- </div> -->
         <!-- <div class="cart-placehold"></div> -->
 
@@ -34,8 +34,12 @@
     <section class="featured-container">
 
     </section>
-    
+
     <section class="flex-container">
+        <img class="border b-top-left" src="images/border-bg-01-01.svg">
+        <img class="border b-top-right" src="images/border-bg-01-02.svg">
+        <img class="border b-bot-right" src="images/border-bg-01-03.svg">
+        <img class="border b-bot-left" src="images/border-bg-01-04.svg">
         <!-- <div class="vigor">
             <img class="add-to-cart" src="images/outline-exposure_plus_1-24px.svg">
             <img class="product-img" src="images/vigor-01.svg">
@@ -119,17 +123,17 @@
         </div> -->
     </section>
 
-    
+
     <section class="cart-container">
         <i class="material-icons cart-x">close</i>
         <p class="form-title">Your Cart</p>
-        
-        <!-- example item list for styling purposes -->
-        <p class="checkout-item">Vigor Name ${price}</p>
-        <img class="delete-item" src="images/delete.png">
-        <p class="checkout-item">Vigor Name ${price}</p>
-        <img class="delete-item" src="images/delete.png">
-
+        <section class="cart-items">
+            <!-- example item list for styling purposes -->
+            <!-- <p class="checkout-item">Vigor Name ${price}</p>
+            <img class="delete-item" src="images/delete.png">
+            <p class="checkout-item">Vigor Name ${price}</p>
+            <img class="delete-item" src="images/delete.png"> -->
+        </section>
         <p>Subtotal: ${subtotal}</p>
         <button type="button" class="checkout-btn">Checkout</button>
     </section>
@@ -148,6 +152,11 @@
     </section>
 
     <section class="payment-container">
+        <img class="border b-top-left" src="images/border-bg-01-01.svg">
+        <img class="border b-top-right" src="images/border-bg-01-02.svg">
+        <img class="border b-bot-right" src="images/border-bg-01-03.svg">
+        <img class="border b-bot-left" src="images/border-bg-01-04.svg">
+
         <p class="form-title">Payment</p>
         <i class="material-icons payment-x">close</i>
         <p>Please pay with credit card or cash.</p>
@@ -158,14 +167,14 @@
             <input type="text" class="input" placeholder="Exp">
             <input type="text" class="input" placeholder="CVV">
             <!-- cash option -->
-        </form>    
+        </form>
         <p>Cash</p>
         <form class="payment-form">
             <input type="text" class="input" placeholder="Enter cash submitted">
             <p>Change:</p>
         </form>
-            <button type="button" class="submit-btn">SAVE</button>
-        
+        <button type="button" class="submit-btn">SAVE</button>
+
     </section>
 
     <section class="receipt-container">
@@ -177,10 +186,10 @@
         <img class="delete-item" src="images/delete.png">
         <p class="checkout-item">Vigor Name ${price}</p>
         <img class="delete-item" src="images/delete.png">
-    
+
         <p>Subotal: ${subtotal}</p>
         <p>Tax: ${tax}</p>
-        <p>Total: ${total}</p>    
+        <p>Total: ${total}</p>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

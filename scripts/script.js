@@ -3,6 +3,7 @@
 
 
 $(document).ready(() => {
+let inCart =[];
 
 const productList = [{
     name: "Devil's Kiss",
@@ -78,8 +79,8 @@ const pageSetup = () => {
     // this displays vigors/potion items to html
     for (let i=0; i <= 8; i++) {
         $(".flex-container").append(`
-        <div class="vigor" id="${i}">
-        <img class="add-to-cart" src="images/outline-exposure_plus_1-24px.svg">
+        <div class="vigor">
+        <img class="add-to-cart" id="${i}" src="images/outline-exposure_plus_1-24px.svg">
         <img class="product-img" src="images/vigor-0${i}.svg">
         <div class="product-info-box">
             <p class="product-text">${productList[i].name}</p>
@@ -92,6 +93,29 @@ const pageSetup = () => {
     }
 }
 
+const populateCart = () => {
+    $(".cart-items").empty();
+    for (let i=0; i <= inCart.length; i++) {
+        $(".cart-container").prepend(`
+        <img class="product-img" src="images/vigor-0${i}.svg">
+        <p class="checkout-item">${productList[i].name} ${productList[i].price}</p>
+        <img class="delete-item" src="images/delete.png">
+        `)
+    }
+}
+
+$(document).on("click", ".add-to-cart", (event) => {
+    let cartItem = $(event.target).attr("id");
+    inCart.push(productList[cartItem]);
+    console.log(productList[cartItem]);
+    console.log(inCart);
+
+    populateCart();
+});
+
+
+
+// click events for show/hiding pop ups
 $(document).on("click", ".cart", (event) => {
     $(".cart-container").show();
 
