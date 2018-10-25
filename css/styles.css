@@ -125,6 +125,54 @@ h2 {
     margin: 8px 0 8px 8px;
 }
 
+.cart-container {
+
+}
+
+.checkout-item {
+
+}
+
+.delete-item {
+
+}
+
+.checkout-btn {
+
+}
+
+.checkout-container {
+
+}
+
+.total {
+
+}
+
+.payment-btn {
+
+}
+
+.payment-container {
+
+}
+
+.payment-form {
+
+}
+
+.input {
+
+}
+
+.submit-btn {
+
+}
+
+.receipt-container {
+    
+}
+
 /* media queries */
 
 @media only screen and (min-width: 384px) {
@@ -228,5 +276,3 @@ h2 {
     .flex-container {
         max-width: 699px;
     }
-
-}
