@@ -4,7 +4,7 @@
 
 $(document).ready(() => {
 
-    let inCart =[];
+    let inCart =[]; // variable for our customers cart
 
     const productList = [{
         name: "Devil's Kiss",
@@ -76,8 +76,8 @@ $(document).ready(() => {
     }
     ];
 
+// this displays vigors/potion items to html
 const pageSetup = () => {
-    // this displays vigors/potion items to html
     for (let i=0; i <= 8; i++) {
         $(".flex-container").append(`
         <div class="vigor">
@@ -94,17 +94,19 @@ const pageSetup = () => {
     }
 }
 
+// fills cart from our customers product array
 const populateCart = () => {
 
     const emptyCart= $(".cart-items");
     let subtotal = 0;
 
-    emptyCart.html(""); // clears container
+    emptyCart.html(""); // clears container each time and item is added
 
 
-
+    //populates all cart-type of windows
     for (let i=0; i < inCart.length; i++) {
         
+        //prepends all cart-items in array
         $(".cart-items").prepend(`
         <section class="item-slot">
             <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
@@ -112,8 +114,10 @@ const populateCart = () => {
         </section>
         `);
 
+        //calculate subtotal
         subtotal += inCart[i].price;
         
+        //add an element after items containing all totals and calculations
         $(".totals").html("") //clears previous subtotal
         $(".cart-items").after(`
         <div class="totals">
@@ -124,7 +128,7 @@ const populateCart = () => {
 
     }
 }
-
+    //event listener to push item to customer product array
     $(document).on("click", ".add-to-cart", (event) => {
         let cartItem = $(event.target).attr("id");
         inCart.push(productList[cartItem]);
@@ -178,13 +182,9 @@ const populateCart = () => {
             $(".subtotal").remove();
             $("cart-items").html(`<p>Your cart is empty.</p>`);
         }
-
-
-
-        
+   
     });
 
+
     pageSetup();
-
-
 });

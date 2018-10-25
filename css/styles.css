@@ -279,7 +279,7 @@ button:hover {
     z-index: 1;
     top: 50%;
     right: 30%;
-    width: 40%;
+    /* width: 40%; */
     padding: 5px;
     display: none;
 }
@@ -347,6 +347,7 @@ button:hover {
         display: block;
         font-size: 20px;
     }
+
 
 }
 
