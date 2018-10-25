@@ -100,7 +100,12 @@ const populateCart = () => {
     const emptyCart= $(".cart-items");
     let subtotal = 0;
 
+
+
+    emptyCart.html(""); // clears container
+
     emptyCart.html(""); // clears container each time and item is added
+
 
 
     //populates all cart-type of windows
@@ -116,8 +121,9 @@ const populateCart = () => {
 
         //calculate subtotal
         subtotal += inCart[i].price;
-        
+
         //add an element after items containing all totals and calculations
+
         $(".totals").html("") //clears previous subtotal
         $(".cart-items").after(`
         <div class="totals">
@@ -128,7 +134,9 @@ const populateCart = () => {
 
     }
 }
+
     //event listener to push item to customer product array
+
     $(document).on("click", ".add-to-cart", (event) => {
         let cartItem = $(event.target).attr("id");
         inCart.push(productList[cartItem]);
@@ -179,8 +187,9 @@ const populateCart = () => {
         } else if ($(event.target).hasClass("receipt-x")) {
             $(".receipt-container").hide();
             $(".item-slot").remove();
-            $(".subtotal").remove();
-            $("cart-items").html(`<p>Your cart is empty.</p>`);
+            $(".totals").remove();
+            $(".total").remove();
+            // $("cart-items").html(`<p>Your cart is empty.</p>`);
         }
    
     });
