@@ -6,12 +6,21 @@ body {
 }
 /* header formatting */
 
-.logo-placehold {
-    height: 50px;
-    width: 100px;
+/* .logo-placehold {
+    height: 100px;
+    width: 200px;
     background-color: white;
     position: absolute;
     bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+} */
+
+.logo {
+    height: 100px;
+    width: 150px;
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -125,24 +134,48 @@ h2 {
     margin: 8px 0 8px 8px;
 }
 
-.cart-container {
+/* Cart */
 
+.cart-container {
+    background-color: rgba(37, 36, 36, 0.9);
+    color: #fff;
+    width: 20%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    z-index: 1;
+    padding: 5px;
 }
 
 .checkout-item {
-
+    border-bottom: 1px solid gray;
+    padding: 5px;
 }
 
 .delete-item {
-
+    width: 15px;
+    height: 20px;
 }
 
 .checkout-btn {
-
+    color: #fff;
+    height: 30px;
+    width: 100%;
+    border: none;
+    background-color: rgb(64, 95, 99);
 }
 
-.checkout-container {
+/* Checkout */
 
+.checkout-container {
+    background-color: rgba(37, 36, 36, 0.9);
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 30%;
+    width: 40%;
+    padding: 5px;
 }
 
 .total {
@@ -150,24 +183,43 @@ h2 {
 }
 
 .payment-btn {
-
+    color: #fff;
+    height: 30px;
+    width: 100%;
+    border: none;
+    background-color: rgb(64, 95, 99);
 }
 
-.payment-container {
+/* Payment */
 
+.payment-container {
+    background-color: rgba(37, 36, 36, 0.9);
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 30%;
+    width: 40%;
+    padding: 5px;
 }
 
 .payment-form {
-
+    display: flex;
+    flex-direction: column;
 }
 
 .input {
-
+    color: #fff;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
 }
 
 .submit-btn {
 
 }
+
+/* Receipt */
 
 .receipt-container {
     
@@ -276,3 +328,4 @@ h2 {
     .flex-container {
         max-width: 699px;
     }
+}
