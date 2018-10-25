@@ -94,7 +94,7 @@ const pageSetup = () => {
 }
 
 const populateCart = () => {
-    const emptyCart= $(".cart-items");
+    const emptyCart = $(".cart-items");
     emptyCart.html(""); // clears container
 
     for (let i=0; i < inCart.length; i++) {
@@ -102,7 +102,9 @@ const populateCart = () => {
         <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
         <img class="delete-item" src="images/delete.png">
         `)
+    
     }
+
 }
 
 $(document).on("click", ".add-to-cart", (event) => {
@@ -138,6 +140,9 @@ $(document).on("mouseover", ".material-icons, .cart, button, .add-to-cart, .dele
 
 });
 
+$(document).on("click", ".checkout-btn", (event) => {
+    $(".checkout-container").show();
+});
 
     // add html to page to display specials list
     // for (let i=0; i <= 1; i++) {
