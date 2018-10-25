@@ -94,8 +94,10 @@ const pageSetup = () => {
 }
 
 const populateCart = () => {
+
     const emptyCart= $(".cart-items");
     let total = 0;
+
     emptyCart.html(""); // clears container
 
     for (let i=0; i < inCart.length; i++) {
@@ -109,7 +111,9 @@ const populateCart = () => {
         $(".subtotal").html("") //clears previous subtotal
         $(".cart-items").after(`<p class="subtotal" >Subtotal: $${total}</p>
         `)
+    
     }
+
 }
 
 $(document).on("click", ".add-to-cart", (event) => {
@@ -145,6 +149,9 @@ $(document).on("mouseover", ".material-icons, .cart, button, .add-to-cart, .dele
 
 });
 
+$(document).on("click", ".checkout-btn", (event) => {
+    $(".checkout-container").show();
+});
 
     // add html to page to display specials list
     // for (let i=0; i <= 1; i++) {
