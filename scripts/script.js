@@ -94,11 +94,12 @@ const pageSetup = () => {
 }
 
 const populateCart = () => {
-    $(".cart-items").empty();
-    for (let i=0; i <= inCart.length; i++) {
-        $(".cart-container").prepend(`
-        <img class="product-img" src="images/vigor-0${i}.svg">
-        <p class="checkout-item">${productList[i].name} ${productList[i].price}</p>
+    const emptyCart= $(".cart-items");
+    emptyCart.html(""); // clears container
+
+    for (let i=0; i < inCart.length; i++) {
+        $(".cart-items").prepend(`
+        <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
         <img class="delete-item" src="images/delete.png">
         `)
     }
@@ -107,8 +108,6 @@ const populateCart = () => {
 $(document).on("click", ".add-to-cart", (event) => {
     let cartItem = $(event.target).attr("id");
     inCart.push(productList[cartItem]);
-    console.log(productList[cartItem]);
-    console.log(inCart);
 
     populateCart();
 });
