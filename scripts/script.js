@@ -76,46 +76,58 @@ $(document).ready(() => {
     }
     ];
 
-    const pageSetup = () => {
-        // this displays vigors/potion items to html
-        for (let i=0; i <= 8; i++) {
-            $(".flex-container").append(`
-            <div class="vigor">
-            <img class="add-to-cart" id="${i}" src="images/outline-exposure_plus_1-24px.svg">
-            <img class="product-img" src="images/vigor-0${i}.svg">
-            <div class="product-info-box">
-                <p class="product-text">${productList[i].name}</p>
-                <p class="product-text">${productList[i].category}</p>
-                <p class="product-text">${productList[i].description}</p>
-                <p class="product-text">${productList[i].price}</p>
-            </div>
+const pageSetup = () => {
+    // this displays vigors/potion items to html
+    for (let i=0; i <= 8; i++) {
+        $(".flex-container").append(`
+        <div class="vigor">
+        <img class="add-to-cart" id="${i}" src="images/outline-exposure_plus_1-24px.svg">
+        <img class="product-img" src="images/vigor-0${i}.svg">
+        <div class="product-info-box">
+            <p class="product-text">${productList[i].name}</p>
+            <p class="product-text">${productList[i].category}</p>
+            <p class="product-text">${productList[i].description}</p>
+            <p class="product-text">${productList[i].price}</p>
         </div>
-        `)
-        }
+    </div>
+    `)
     }
+}
 
-    const populateCart = () => {
+const populateCart = () => {
 
-        const emptyCart= $(".cart-items");
-        let total = 0;
+    const emptyCart= $(".cart-items");
+    let subtotal = 0;
+    let tax = subtotal * .06;
+    let total = subtotal + tax;
 
-        emptyCart.html(""); // clears container
+    emptyCart.html(""); // clears container
 
-        for (let i=0; i < inCart.length; i++) {
-            $(".cart-items").prepend(`
-            <section class="item-slot">
+
+
+    for (let i=0; i < inCart.length; i++) {
+        
+        $(".cart-items").prepend(`
+        <section class="item-slot">
             <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
             <img class="delete-item" src="images/delete.png">
-            </section>
-            `)
-            total += inCart[i].price;
-            $(".subtotal").html("") //clears previous subtotal
-            $(".cart-items").after(`<p class="subtotal" >Subtotal: $${total}</p>
-            `)
-        
-        }
+        </section>
+        `);
 
+        subtotal += inCart[i].price;
+        $(".subtotal").html("") //clears previous subtotal
+        $(".cart-items").after(`<p class="subtotal" >Subtotal: $${subtotal}</p>
+        `);
+
+        // $(".form-title").after(`
+        //     <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
+        // `);
+
+        // <p>Subtotal: ${subtotal}</p>
+        // <p>Tax: ${tax}</p>
+        // <p>Total: ${total}</p>
     }
+
 
     $(document).on("click", ".add-to-cart", (event) => {
         let cartItem = $(event.target).attr("id");
