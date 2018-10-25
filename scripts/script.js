@@ -78,7 +78,7 @@ const pageSetup = () => {
     // this displays vigors/potion items to html
     for (let i=0; i <= 8; i++) {
         $(".flex-container").append(`
-        <div class="vigor" id="vigor ${i}">
+        <div class="vigor" id="${i}">
         <img class="add-to-cart" src="images/outline-exposure_plus_1-24px.svg">
         <img class="product-img" src="images/vigor-0${i}.svg">
         <div class="product-info-box">
