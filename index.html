@@ -118,7 +118,62 @@
         </div>
     </section>
 
+    
+    <section class="cart-container">
+        <p>Your Cart</p>
 
+        <!-- example item list for styling purposes -->
+        <p class="checkout-item">Vigor Name ${price}</p>
+        <img class="delete-item" src="images/delete.png">
+        <p class="checkout-item">Vigor Name ${price}</p>
+        <img class="delete-item" src="images/delete.png">
+
+        <p>Subtotal: ${subtotal}</p>
+        <button type="button" class="checkout-btn">Checkout</button>
+    </section>
+
+
+    <section class="checkout-container">
+        <!-- example item list for styling purposes -->
+        <p class="checkout-item">Vigor Name ${price}</p>
+        <p class="checkout-item">Vigor Name ${price}</p>
+        <p>Subotal: ${subtotal}</p>
+        <p>Tax: ${tax}</p>
+        <p>Total: ${total}</p>
+        <button type="button" class="payment-btn">Submit Payment</button>
+    </section>
+
+    <section class="payment-container">
+        <p>Payment</p>
+        <p>Please pay with credit card or cash.</p>
+        <p>Your total: </p>
+        <form class="payment-form">
+            <input type="text" class="input" placeholder="Name">
+            <input type="text" class="input" placeholder="Credit Card Number">
+            <input type="text" class="input" placeholder="Exp">
+            <input type="text" class="input" placeholder="CVV">
+            <!-- cash option -->
+            <p>cash</p>
+            <input type="text" class="input" placeholder="Enter cash submitted">
+            <p>Change:</p>
+
+            <button type="button" class="submit-btn">SAVE</button>
+        </form>
+    </section>
+
+    <section class="receipt-container">
+        <p>Good luck!</p>
+        <p>Your Receipt</p>
+        <!-- example item list for styling purposes -->
+        <p class="checkout-item">Vigor Name ${price}</p>
+        <img class="delete-item" src="images/delete.png">
+        <p class="checkout-item">Vigor Name ${price}</p>
+        <img class="delete-item" src="images/delete.png">
+    
+        <p>Subotal: ${subtotal}</p>
+        <p>Tax: ${tax}</p>
+        <p>Total: ${total}</p>    
+    </section>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="scripts/script.js"></script>
