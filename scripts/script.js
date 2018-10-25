@@ -98,8 +98,6 @@ const populateCart = () => {
 
     const emptyCart= $(".cart-items");
     let subtotal = 0;
-    let tax = subtotal * .06;
-    let total = subtotal + tax;
 
     emptyCart.html(""); // clears container
 
@@ -115,20 +113,18 @@ const populateCart = () => {
         `);
 
         subtotal += inCart[i].price;
-        $(".subtotal").html("") //clears previous subtotal
-        $(".cart-items").after(`<p class="subtotal" >Subtotal: $${subtotal}</p>
+        
+        $(".totals").html("") //clears previous subtotal
+        $(".cart-items").after(`
+        <div class="totals">
+        <p>Subtotal: $${subtotal}</p>
+        <p>Tax: $${(subtotal * .06).toFixed(2)}</p>
+        <p class="total" >Total: $${(subtotal  * .06 + subtotal).toFixed(2)}</p>
         `);
 
-        // $(".form-title").after(`
-        //     <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
-        // `);
-
-        // <p>Subtotal: ${subtotal}</p>
-        // <p>Tax: ${tax}</p>
-        // <p>Total: ${total}</p>
     }
 }
-    
+
     $(document).on("click", ".add-to-cart", (event) => {
         let cartItem = $(event.target).attr("id");
         inCart.push(productList[cartItem]);
@@ -169,7 +165,7 @@ const populateCart = () => {
         
         if ($(event.target).hasClass("checkout-btn")) {
             $(".checkout-container").show();
-            $(".cart-container").hide().html("");
+            $(".cart-container").hide();
             // $("item-slot").remove();
         } else if ($(event.target).hasClass("payment-btn")) {
             $(".payment-container").show();
