@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Montserrat:400,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="author" content="Erica Rachel Steve">
 </head>
 
@@ -120,8 +121,9 @@
 
     
     <section class="cart-container">
-        <p>Your Cart</p>
-
+        <i class="material-icons">close</i>
+        <p class="form-title">Your Cart</p>
+        
         <!-- example item list for styling purposes -->
         <p class="checkout-item">Vigor Name ${price}</p>
         <img class="delete-item" src="images/delete.png">
@@ -134,6 +136,8 @@
 
 
     <section class="checkout-container">
+        <i class="material-icons">close</i>
+        <p class="form-title">Checkout</p>
         <!-- example item list for styling purposes -->
         <p class="checkout-item">Vigor Name ${price}</p>
         <p class="checkout-item">Vigor Name ${price}</p>
@@ -144,7 +148,8 @@
     </section>
 
     <section class="payment-container">
-        <p>Payment</p>
+        <p class="form-title">Payment</p>
+        <i class="material-icons">close</i>
         <p>Please pay with credit card or cash.</p>
         <p>Your total: </p>
         <form class="payment-form">
@@ -153,17 +158,20 @@
             <input type="text" class="input" placeholder="Exp">
             <input type="text" class="input" placeholder="CVV">
             <!-- cash option -->
-            <p>cash</p>
+        </form>    
+        <p>Cash</p>
+        <form class="payment-form">
             <input type="text" class="input" placeholder="Enter cash submitted">
             <p>Change:</p>
-
-            <button type="button" class="submit-btn">SAVE</button>
         </form>
+            <button type="button" class="submit-btn">SAVE</button>
+        
     </section>
 
     <section class="receipt-container">
+        <i class="material-icons">close</i>
         <p>Good luck!</p>
-        <p>Your Receipt</p>
+        <p class="form-title">Your Receipt</p>
         <!-- example item list for styling purposes -->
         <p class="checkout-item">Vigor Name ${price}</p>
         <img class="delete-item" src="images/delete.png">
