@@ -62,13 +62,13 @@ const productList = [{
 
 const featuredList = [{
     name: "Adam's Posession",
-    category: "potions",
+    category: "potion",
     description: "causes a student to be real smart",
     price: 1000
 },
 {
     name: "Carly's Transportation",
-    category: "potions",
+    category: "potion",
     description: "instantly teleport to another location",
     price: 1000
 }
@@ -90,6 +90,31 @@ const pageSetup = () => {
     </div>
     `)
     }
+}
+
+$(document).on("click", ".cart", (event) => {
+    $(".cart-container").show();
+
+});
+
+$(document).on("click", ".cart-x, .checkout-x, .payment-x, .reciept-x", (event) => {
+
+    if ($(event.target).hasClass("cart-x")) {
+            $(".cart-container").hide();
+        } else if ($(event.target).hasClass("checkout-x")) {
+            $(".checkout-container").hide();
+        } else if ($(event.target).hasClass("payment-x")) {
+            $(".payment-container").hide();
+        } else if ($(event.target).hasClass("reciept-x")) {
+            $(".receipt-container ").hide();
+        }       
+});
+
+$(document).on("mouseover", ".material-icons, .cart, button, .add-to-cart, .delete-item", (event) => {
+    $(event.target).css("cursor", "pointer");
+
+});
+
 
     // add html to page to display specials list
     // for (let i=0; i <= 1; i++) {
@@ -108,7 +133,6 @@ const pageSetup = () => {
     // }
     
 
-}
 pageSetup();
 
 
