@@ -95,6 +95,7 @@ const pageSetup = () => {
 
 const populateCart = () => {
     const emptyCart= $(".cart-items");
+    let total = 0;
     emptyCart.html(""); // clears container
 
     for (let i=0; i < inCart.length; i++) {
@@ -103,6 +104,10 @@ const populateCart = () => {
         <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
         <img class="delete-item" src="images/delete.png">
         </section>
+        `)
+        total += inCart[i].price;
+        $(".subtotal").html("") //clears previous subtotal
+        $(".cart-items").after(`<p class="subtotal" >Subtotal: $${total}</p>
         `)
     }
 }
