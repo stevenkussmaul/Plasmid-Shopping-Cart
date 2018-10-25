@@ -169,8 +169,7 @@ const populateCart = () => {
         
         if ($(event.target).hasClass("checkout-btn")) {
             $(".checkout-container").show();
-            $(".cart-container").hide().html("");
-            // $("item-slot").remove();
+            $(".cart-container").hide();
         } else if ($(event.target).hasClass("payment-btn")) {
             $(".payment-container").show();
             $(".checkout-container").hide();
@@ -179,6 +178,9 @@ const populateCart = () => {
             $(".payment-container").hide();
         } else if ($(event.target).hasClass("receipt-x")) {
             $(".receipt-container").hide();
+            $(".item-slot").remove();
+            $(".subtotal").remove();
+            $("cart-items").html(`<p>Your cart is empty.</p>`);
         }
 
 
