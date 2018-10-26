@@ -135,6 +135,7 @@ const populateCart = () => {
         <p class="total" >Total: $${total}</p>
         `);
 
+        //adds item total next to cart
         $(".cartNum").remove() //clears previous subtotal
         $("header").append(`
         <div class="cartNum">${i+1}</div>
@@ -194,10 +195,13 @@ const populateCart = () => {
                 $(".cart-container").hide();
             } else if ($(event.target).hasClass("checkout-x")) {
                 $(".checkout-container").hide();
+                $(".overlay").hide();
             } else if ($(event.target).hasClass("payment-x")) {
                 $(".payment-container").hide();
+                $(".overlay").hide();
             } else if ($(event.target).hasClass("reciept-x")) {
                 $(".receipt-container ").hide();
+                $(".overlay").hide();
             }       
     });
 
@@ -208,7 +212,7 @@ const populateCart = () => {
 
     //click event for the shopping cart icon in the menu to show 
     $(document).on("click", ".cart", (event) => {
-        $(".cart-container").show();
+        $(".cart-container").fadeIn("fast");
     });
 
     $(document).on("mouseover", ".material-icons, .cart, button, .add-to-cart, .delete-item", (event) => {
@@ -222,16 +226,20 @@ const populateCart = () => {
     $(document).on("click", ".checkout-btn, .payment-btn, .submit-btn, .receipt-x", (event) => {
         
         if ($(event.target).hasClass("checkout-btn")) {
-            $(".checkout-container").show();
-            $(".cart-container").hide();
+            $(".overlay").show();
+            $(".checkout-container").fadeIn("fast");
+            $(".cart-container").fadeOut("fast");
         } else if ($(event.target).hasClass("payment-btn")) {
-            $(".payment-container").show();
-            $(".checkout-container").hide();
+            $(".overlay").show();
+            $(".payment-container").fadeIn("fast");
+            $(".checkout-container").fadeOut("fast");
         } else if ($(event.target).hasClass("submit-btn")) {
-            $(".receipt-container").show();
-            $(".payment-container").hide();
+            $(".overlay").show();
+            $(".receipt-container").fadeIn("fast");
+            $(".payment-container").fadeOut("fast");
         } else if ($(event.target).hasClass("receipt-x")) {
-            $(".receipt-container").hide();
+            $(".overlay").hide();
+            $(".receipt-container").fadeOut("fast");
             $(".item-slot").remove();
             $(".totals").remove();
             $(".total").remove();
