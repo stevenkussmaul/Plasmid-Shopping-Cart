@@ -135,6 +135,7 @@ const populateCart = () => {
         <p class="total" >Total: $${total}</p>
         `);
 
+        //adds item total next to cart
         $(".cartNum").remove() //clears previous subtotal
         $("header").append(`
         <div class="cartNum">${i+1}</div>
