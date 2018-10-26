@@ -133,6 +133,17 @@ h2 {
     align-items: center;
 }
 
+.vigor:hover {
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: rgb(10, 34, 37);
+}
+
 .product-img {
     height: 125px;
     width: 125px;

@@ -206,6 +206,13 @@ const populateCart = () => {
         $(".cart-container").show();
     });
 
+    $(document).on("mouseover", ".material-icons, .cart, button, .add-to-cart, .delete-item", (event) => {
+        $(event.target).fadeTo(100, 0.5);
+    });
+    $(document).on("mouseout", ".material-icons, .cart, button, .add-to-cart, .delete-item", (event) => {
+        $(event.target).fadeTo(100, 1);
+    });
+
     //click events for checkout system workflow
     $(document).on("click", ".checkout-btn, .payment-btn, .submit-btn, .receipt-x", (event) => {
         
