@@ -126,8 +126,8 @@ const populateCart = () => {
         $(".totals").html("") //clears previous subtotal
         $(".cart-items").after(`
         <div class="totals">
-        <p>Subtotal: $${subtotal}</p>
-        <p>Tax: $${(subtotal * .06).toFixed(2)}</p>
+        <p class="subtotal">Subtotal: $${subtotal}</p>
+        <p class="tax">Tax: $${(subtotal * .06).toFixed(2)}</p>
         <p class="total" >Total: $${total}</p>
         `);
 
@@ -142,7 +142,7 @@ const populateCart = () => {
     // adds final total to payment page
     $(".payment-pg-total").html("")
     $(".payment-pg-total").append(`
-    <p>Your total: $${total}</p>
+    <p class="your-total">Your total: $${total}</p>
     `);
 
     // calculates cash
