@@ -5,6 +5,17 @@ body {
     background-size: 100%;
 }
 
+.overlay {
+    background-color: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    display: none;
+}
+
 .border {
     height: 20px;
 }

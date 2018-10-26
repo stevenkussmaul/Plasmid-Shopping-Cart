@@ -194,10 +194,13 @@ const populateCart = () => {
                 $(".cart-container").hide();
             } else if ($(event.target).hasClass("checkout-x")) {
                 $(".checkout-container").hide();
+                $(".overlay").hide();
             } else if ($(event.target).hasClass("payment-x")) {
                 $(".payment-container").hide();
+                $(".overlay").hide();
             } else if ($(event.target).hasClass("reciept-x")) {
                 $(".receipt-container ").hide();
+                $(".overlay").hide();
             }       
     });
 
@@ -222,15 +225,19 @@ const populateCart = () => {
     $(document).on("click", ".checkout-btn, .payment-btn, .submit-btn, .receipt-x", (event) => {
         
         if ($(event.target).hasClass("checkout-btn")) {
+            $(".overlay").show();
             $(".checkout-container").fadeIn("fast");
             $(".cart-container").fadeOut("fast");
         } else if ($(event.target).hasClass("payment-btn")) {
+            $(".overlay").show();
             $(".payment-container").fadeIn("fast");
             $(".checkout-container").fadeOut("fast");
         } else if ($(event.target).hasClass("submit-btn")) {
+            $(".overlay").show();
             $(".receipt-container").fadeIn("fast");
             $(".payment-container").fadeOut("fast");
         } else if ($(event.target).hasClass("receipt-x")) {
+            $(".overlay").hide();
             $(".receipt-container").fadeOut("fast");
             $(".item-slot").remove();
             $(".totals").remove();
