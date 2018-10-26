@@ -208,7 +208,7 @@ const populateCart = () => {
 
     //click event for the shopping cart icon in the menu to show 
     $(document).on("click", ".cart", (event) => {
-        $(".cart-container").show();
+        $(".cart-container").fadeIn("fast");
     });
 
     $(document).on("mouseover", ".material-icons, .cart, button, .add-to-cart, .delete-item", (event) => {
@@ -222,16 +222,16 @@ const populateCart = () => {
     $(document).on("click", ".checkout-btn, .payment-btn, .submit-btn, .receipt-x", (event) => {
         
         if ($(event.target).hasClass("checkout-btn")) {
-            $(".checkout-container").show();
-            $(".cart-container").hide();
+            $(".checkout-container").fadeIn("fast");
+            $(".cart-container").fadeOut("fast");
         } else if ($(event.target).hasClass("payment-btn")) {
-            $(".payment-container").show();
-            $(".checkout-container").hide();
+            $(".payment-container").fadeIn("fast");
+            $(".checkout-container").fadeOut("fast");
         } else if ($(event.target).hasClass("submit-btn")) {
-            $(".receipt-container").show();
-            $(".payment-container").hide();
+            $(".receipt-container").fadeIn("fast");
+            $(".payment-container").fadeOut("fast");
         } else if ($(event.target).hasClass("receipt-x")) {
-            $(".receipt-container").hide();
+            $(".receipt-container").fadeOut("fast");
             $(".item-slot").remove();
             $(".totals").remove();
             $(".total").remove();
