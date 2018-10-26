@@ -121,8 +121,6 @@ h2 {
     justify-content: space-around;
     background-color: rgba(10, 34, 37, 0.6);
     box-shadow: inset 0px 0px 20px rgba(0,0,0,0.5);
-    /* background-image: url("../images/border-bg-01.svg");
-    background-size: 700px; */
 }
 
 .vigor {
@@ -168,12 +166,12 @@ h2 {
 /* Cart */
 
 .cart-container {
-    /* display: none; */
+    display: none;
     background-color: rgba(37, 36, 36, 0.9);
     color: #fff;
-    width: 20%;
+    width: 90%;
     position: absolute;
-    top: 9%;
+    top: 50px;
     right: 0%;
     z-index: 101;
     padding: 5px;
@@ -216,11 +214,12 @@ button:hover {
 .checkout-container {
     background-color: rgba(37, 36, 36, 0.9);
     color: #fff;
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    right: 30%;
-    width: 40%;
+    position: fixed;
+    z-index: 200;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
     padding: 5px;
     display: none;
 }
@@ -238,11 +237,12 @@ button:hover {
 .payment-container {
     background-color: rgba(37, 36, 36, 0.9);
     color: #fff;
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    right: 30%;
-    width: 40%;
+    position: fixed;
+    z-index: 200;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
     padding: 5px;
     display: none;
 }
@@ -275,27 +275,33 @@ button:hover {
 .receipt-container {
     background-color: rgba(37, 36, 36, 0.9);
     color: #fff;
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    right: 30%;
-    width: 40%;
+    position: fixed;
+    z-index: 200;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
     padding: 5px;
     display: none;
 }
 
 /* media queries */
 
-@media only screen and (min-width: 384px) {
+@media only screen and (min-width: 375px) {
 
     h1 {
-        width: 150px;
+        width: 100%;
         font-size: 40px;
     }
 
     .vigor {
-        margin: 25px;
+        margin: px;
     }
+
+    .border {
+        display: none;
+    }
+
 }
 
 @media only screen and (min-width: 450px) {
@@ -348,7 +354,6 @@ button:hover {
         font-size: 20px;
     }
 
-
 }
 
 
@@ -376,6 +381,23 @@ button:hover {
         font-size: 20px;
     }
     
+    .receipt-container, .payment-container, .checkout-container {
+        background-color: rgba(37, 36, 36, 0.9);
+        color: #fff;
+        position: absolute;
+        z-index: 250;
+        right: 30%;
+        width: 70%;
+        display: none;
+        }
+
+    .cart-container {
+        top: 50px;
+        right: 0;
+        width: 40%;
+        padding: 5px;
+        display: none;
+    }  
 
 }
 
