@@ -10,55 +10,64 @@ $(document).ready(() => {
         name: "Devil's Kiss",
         category: "vigor",
         description: "Throw a flaming projectile!",
-        price: 13
+        price: 13,
+        src: "images/vigor-00.svg"
     },
     {
         name: "Murder of Crows",
         category: "vigor",
         description: "A flock of crows will descend upon your enemy!",
-        price: 18
+        price: 18,
+        src: "images/vigor-01.svg"
     },
     {
         name: "Return to Sender",
         category: "vigor",
         description: "reflect attacks back to enemy with this sheild!",
-        price: 19
+        price: 19,
+        src: "images/vigor-02.svg"
     },
     {
         name: "Eletro-Bolt",
         category: "vigor",
         description: "Electrocute a target!",
-        price: 13
+        price: 13,
+        src: "images/vigor-03.svg"
     },
     {
         name: "Peeping Tom",
         category: "plasmid",
         description: "X-Ray vision!",
-        price: 11
+        price: 11,
+        src: "images/vigor-04.svg"
     },
     {
         name: "Chameleon",
         category: "plasmid",
         description: "Invisiblity!",
-        price: 24
+        price: 24,
+        src: "images/vigor-05.svg"
     },
     {
         name: "Glorious Goldfish",
         category: "plasmid",
         description: "Breathe underwater",
-        price: 22
+        price: 22,
+        src: "images/vigor-06.svg"
     },
     {
         name: "Winter Blast",
         category: "plasmid",
         description: "Freeze a target",
-        price: 9
+        price: 9,
+        src: "images/vigor-07.svg"
     },
     {
         name: "Telekinesis",
         category: "plasmid",
         description: "Move an object with your mind!",
-        price: 18
+        price: 18,
+        src: "images/vigor-08.svg"
     }
     ];
 
@@ -66,13 +75,15 @@ $(document).ready(() => {
         name: "Adam's Posession",
         category: "potion",
         description: "causes a student to be pretty alright",
-        price: 1000
+        price: 1000,
+        src: "images/vigor-09.svg"
     },
     {
         name: "Carly's Transportation",
         category: "potion",
         description: "instantly teleport to another location",
-        price: 1000
+        price: 1000,
+        src: "images/vigor-10.svg"
     }
     ];
 
@@ -114,6 +125,7 @@ const populateCart = () => {
         //prepends all cart-items in array
         $(".cart-items").prepend(`
         <section class="item-slot">
+            <img class="cart-product-img" src="${productList[i].src}">
             <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
             <img class="delete-item" src="images/delete.png">
         </section>
@@ -165,10 +177,7 @@ const populateCart = () => {
 }
 
 
-
-
     //event listener to push item to customer product array
-
     $(document).on("click", ".add-to-cart", (event) => {
         let cartItem = $(event.target).attr("id");
         inCart.push(productList[cartItem]);
@@ -179,7 +188,7 @@ const populateCart = () => {
     //event listener to delete item from shopping cart arry
     $(document).on("click", ".delete-item", (event) => {
         let deleteAtIndex = $(event.target).attr("id");
-        inCart.splice(deleteAtIndex,1);
+        inCart.splice(deleteAtIndex, 1);
         
         populateCart();
     });
@@ -243,7 +252,7 @@ const populateCart = () => {
             $(".item-slot").remove();
             $(".totals").remove();
             $(".total").remove();
-            // $("cart-items").html(`<p>Your cart is empty.</p>`);
+            $(".cart-items").html(`<p>Your cart is empty.</p>`);
         }
    
     });

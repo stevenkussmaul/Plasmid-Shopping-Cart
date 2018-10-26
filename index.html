@@ -13,8 +13,6 @@
 </head>
 
 <body>
-    <div class="overlay"></div>
-
     <header>
         <!-- <img class="logo" src=""> -->
         <img class="cart" src="images/baseline-shopping_cart-24px.svg">
@@ -31,6 +29,10 @@
             <h1>Evolve Today!</h1>
             <h2>A life with vigor is a life that's bigger!</h2>
         </div>
+    </section>
+
+    <section class="featured-container">
+
     </section>
 
     <section class="flex-container">
@@ -123,11 +125,6 @@
 
 
     <section class="cart-container">
-            <img class="border b-top-left" src="images/border-bg-01-01.svg">
-            <img class="border b-top-right" src="images/border-bg-01-02.svg">
-            <img class="border b-bot-right" src="images/border-bg-01-03.svg">
-            <img class="border b-bot-left" src="images/border-bg-01-04.svg">
-    
         <i class="material-icons cart-x">close</i>
         <p class="form-title">Your Cart</p>
         <section class="cart-items">
@@ -144,22 +141,12 @@
 
 
     <section class="checkout-container">
-            <img class="border b-top-left" src="images/border-bg-01-01.svg">
-            <img class="border b-top-right" src="images/border-bg-01-02.svg">
-            <img class="border b-bot-right" src="images/border-bg-01-03.svg">
-            <img class="border b-bot-left" src="images/border-bg-01-04.svg">
-    
         <i class="material-icons checkout-x">close</i>
         <p class="form-title">Checkout</p>
         <section class="cart-items">
-
+            <!-- script inserts items, subtotal, tax, and total here -->
         </section>
-        <!-- example item list for styling purposes -->
-        <!-- <p class="checkout-item">Vigor Name ${price}</p>
-        <p class="checkout-item">Vigor Name ${price}</p>
-        <p>Subotal: ${subtotal}</p>
-        <p>Tax: ${tax}</p>
-        <p>Total: ${total}</p> -->
+        
         <button type="button" class="payment-btn">Submit Payment</button>
     </section>
 
@@ -189,23 +176,12 @@
     </section>
 
     <section class="receipt-container">
-        <img class="border b-top-left" src="images/border-bg-01-01.svg">
-        <img class="border b-top-right" src="images/border-bg-01-02.svg">
-        <img class="border b-bot-right" src="images/border-bg-01-03.svg">
-        <img class="border b-bot-left" src="images/border-bg-01-04.svg">
         <i class="material-icons receipt-x">close</i>
         <p>Good luck!</p>
         <p class="form-title">Your Receipt</p>
         <section class="cart-items"></section>
-        <!-- example item list for styling purposes -->
-        <!-- <p class="checkout-item">Vigor Name ${price}</p>
-        <img class="delete-item" src="images/delete.png">
-        <p class="checkout-item">Vigor Name ${price}</p>
-        <img class="delete-item" src="images/delete.png">
-
-        <p>Subotal: ${subtotal}</p>
-        <p>Tax: ${tax}</p>
-        <p>Total: ${total}</p> -->
+        <!-- script inserts items, subtotal, tax, and total here -->
+        
     </section>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

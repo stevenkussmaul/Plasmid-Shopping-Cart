@@ -243,6 +243,11 @@ button:hover {
     color: gray;
 }
 
+.cart-product-img {
+    height: 50px;
+    width: 50px;
+}
+
 /* Checkout */
 
 .checkout-container {
