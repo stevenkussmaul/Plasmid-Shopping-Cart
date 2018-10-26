@@ -120,19 +120,19 @@ const populateCart = () => {
     $(".totals").html("") //clears previous subtotal
 
     //populates all cart-type of windows
-    for (let i=0; i < inCart.length; i++) {
+    for (let j=0; j < inCart.length; j++) {
         
         //prepends all cart-items in array
         $(".cart-items").prepend(`
         <section class="item-slot">
-            <img class="cart-product-img" src="${productList[i].src}">
-            <p class="checkout-item">${inCart[i].name} Price: $${inCart[i].price}</p>
-            <img class="delete-item" src="images/delete.png">
+            <img class="cart-product-img" src="${inCart[j].src}">
+            <p class="checkout-item">${inCart[j].name} Price: $${inCart[j].price}</p>
+            <img class="delete-item" id="${j}" src="images/delete.png">
         </section>
         `);
 
         //calculate subtotal
-        subtotal += inCart[i].price;
+        subtotal += inCart[j].price;
 
         //calculate final total
         total = (subtotal  * .06 + subtotal).toFixed(2)
@@ -150,7 +150,7 @@ const populateCart = () => {
         //adds item total next to cart
         $(".cartNum").remove() //clears previous subtotal
         $("header").append(`
-        <div class="cartNum">${i+1}</div>
+        <div class="cartNum">${j+1}</div>
         `);
 
     }
