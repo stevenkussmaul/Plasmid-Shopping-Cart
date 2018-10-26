@@ -106,7 +106,7 @@ const populateCart = () => {
 
     emptyCart.html(""); // clears container each time and item is added
 
-
+    $(".totals").html("") //clears previous subtotal
 
     //populates all cart-type of windows
     for (let i=0; i < inCart.length; i++) {
@@ -141,6 +141,14 @@ const populateCart = () => {
         let cartItem = $(event.target).attr("id");
         inCart.push(productList[cartItem]);
 
+        populateCart();
+    });
+
+    //event listener to delete item from shopping cart arry
+    $(document).on("click", ".delete-item", (event) => {
+        let deleteAtIndex = $(event.target).attr("id");
+        inCart.splice(deleteAtIndex,1);
+        
         populateCart();
     });
 
