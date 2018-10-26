@@ -16,7 +16,7 @@ $(document).ready(() => {
     {
         name: "Adam's Posession",
         category: "potion",
-        description: "causes a student to be pretty alright",
+        description: "causes a student to be pretty allright",
         price: 1000,
         src: "images/vigor-01.svg"
     },
@@ -126,8 +126,8 @@ const populateCart = () => {
         $(".totals").html("") //clears previous subtotal
         $(".cart-items").after(`
         <div class="totals">
-        <p>Subtotal: $${subtotal}</p>
-        <p>Tax: $${(subtotal * .06).toFixed(2)}</p>
+        <p class="subtotal">Subtotal: $${subtotal}</p>
+        <p class="tax">Tax: $${(subtotal * .06).toFixed(2)}</p>
         <p class="total" >Total: $${total}</p>
         `);
 
@@ -142,7 +142,7 @@ const populateCart = () => {
     // adds final total to payment page
     $(".payment-pg-total").html("")
     $(".payment-pg-total").append(`
-    <p>Your total: $${total}</p>
+    <p class="your-total">Your total: $${total}</p>
     `);
 
     // calculates cash
@@ -230,6 +230,7 @@ const populateCart = () => {
             $(".overlay").show();
             $(".receipt-container").fadeIn("fast");
             $(".payment-container").fadeOut("fast");
+            $(".delete-item").hide();
         } else if ($(event.target).hasClass("receipt-x")) {
             $(".overlay").hide();
             $(".receipt-container").fadeOut("fast");
@@ -237,6 +238,7 @@ const populateCart = () => {
             $(".totals").remove();
             $(".total").remove();
             $(".cart-items").html(`<p>Your cart is empty.</p>`);
+            $(".cartNum").remove();
         }
    
     });
