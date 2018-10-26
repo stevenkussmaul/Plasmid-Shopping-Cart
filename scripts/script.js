@@ -7,38 +7,38 @@ $(document).ready(() => {
     let inCart =[]; // variable for our customers cart
 
     const productList = [{
+        name: "Carly's Transportation",
+        category: "potion",
+        description: "instantly teleport to another location",
+        price: 1000,
+        src: "images/vigor-00.svg"
+    },
+    {
+        name: "Adam's Posession",
+        category: "potion",
+        description: "causes a student to be pretty alright",
+        price: 1000,
+        src: "images/vigor-01.svg"
+    },
+    {
         name: "Devil's Kiss",
         category: "vigor",
         description: "Throw a flaming projectile!",
         price: 13,
-        src: "images/vigor-00.svg"
+        src: "images/vigor-02.svg"
     },
     {
         name: "Murder of Crows",
         category: "vigor",
         description: "A flock of crows will descend upon your enemy!",
         price: 18,
-        src: "images/vigor-01.svg"
+        src: "images/vigor-03.svg"
     },
     {
         name: "Return to Sender",
         category: "vigor",
         description: "reflect attacks back to enemy with this sheild!",
         price: 19,
-        src: "images/vigor-02.svg"
-    },
-    {
-        name: "Eletro-Bolt",
-        category: "vigor",
-        description: "Electrocute a target!",
-        price: 13,
-        src: "images/vigor-03.svg"
-    },
-    {
-        name: "Peeping Tom",
-        category: "plasmid",
-        description: "X-Ray vision!",
-        price: 11,
         src: "images/vigor-04.svg"
     },
     {
@@ -68,22 +68,6 @@ $(document).ready(() => {
         description: "Move an object with your mind!",
         price: 18,
         src: "images/vigor-08.svg"
-    }
-    ];
-
-    const featuredList = [{
-        name: "Adam's Posession",
-        category: "potion",
-        description: "causes a student to be pretty alright",
-        price: 1000,
-        src: "images/vigor-09.svg"
-    },
-    {
-        name: "Carly's Transportation",
-        category: "potion",
-        description: "instantly teleport to another location",
-        price: 1000,
-        src: "images/vigor-10.svg"
     }
     ];
 
