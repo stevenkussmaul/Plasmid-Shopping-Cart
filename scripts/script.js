@@ -135,6 +135,11 @@ const populateCart = () => {
         <p class="total" >Total: $${total}</p>
         `);
 
+        $(".cartNum").remove() //clears previous subtotal
+        $("header").append(`
+        <div class="cartNum">${i+1}</div>
+        `);
+
     }
 
     // adds final total to payment page
@@ -204,6 +209,13 @@ const populateCart = () => {
     //click event for the shopping cart icon in the menu to show 
     $(document).on("click", ".cart", (event) => {
         $(".cart-container").show();
+    });
+
+    $(document).on("mouseover", ".material-icons, .cart, button, .add-to-cart, .delete-item", (event) => {
+        $(event.target).fadeTo(100, 0.5);
+    });
+    $(document).on("mouseout", ".material-icons, .cart, button, .add-to-cart, .delete-item", (event) => {
+        $(event.target).fadeTo(100, 1);
     });
 
     //click events for checkout system workflow

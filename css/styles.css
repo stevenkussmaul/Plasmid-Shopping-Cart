@@ -63,6 +63,17 @@ body {
     top: 12px;
 }
 
+.cartNum {
+    /* background-color: red; */
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    color: white;
+}
+
 header {
     background-color: #0A2225;
     position: absolute;
@@ -133,6 +144,17 @@ h2 {
     align-items: center;
 }
 
+.vigor:hover {
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: rgb(10, 34, 37);
+}
+
 .product-img {
     height: 125px;
     width: 125px;
@@ -181,6 +203,7 @@ h2 {
     margin-top: 0;
     font-size: 20px;
 }
+
 
 .item-slot {
     border-bottom: 1px solid gray;
