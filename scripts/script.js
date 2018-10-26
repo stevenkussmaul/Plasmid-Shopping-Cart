@@ -135,6 +135,11 @@ const populateCart = () => {
         <p class="total" >Total: $${total}</p>
         `);
 
+        $(".cartNum").remove() //clears previous subtotal
+        $("header").append(`
+        <div class="cartNum">${i+1}</div>
+        `);
+
     }
 
     // adds final total to payment page
