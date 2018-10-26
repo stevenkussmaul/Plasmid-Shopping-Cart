@@ -43,7 +43,7 @@ $(document).ready(() => {
         price: 24
     },
     {
-        name: "Glorious Golfish",
+        name: "Glorious Goldfish",
         category: "plasmid",
         description: "Breathe underwater",
         price: 22
@@ -65,7 +65,7 @@ $(document).ready(() => {
     const featuredList = [{
         name: "Adam's Posession",
         category: "potion",
-        description: "causes a student to be real smart",
+        description: "causes a student to be pretty alright",
         price: 1000
     },
     {
@@ -99,7 +99,7 @@ const populateCart = () => {
 
     const emptyCart= $(".cart-items");
     let subtotal = 0;
-
+    let total;
 
 
     emptyCart.html(""); // clears container
@@ -122,6 +122,9 @@ const populateCart = () => {
         //calculate subtotal
         subtotal += inCart[i].price;
 
+        //calculate final total
+        total = (subtotal  * .06 + subtotal).toFixed(2)
+
         //add an element after items containing all totals and calculations
 
         $(".totals").html("") //clears previous subtotal
@@ -129,11 +132,34 @@ const populateCart = () => {
         <div class="totals">
         <p>Subtotal: $${subtotal}</p>
         <p>Tax: $${(subtotal * .06).toFixed(2)}</p>
-        <p class="total" >Total: $${(subtotal  * .06 + subtotal).toFixed(2)}</p>
+        <p class="total" >Total: $${total}</p>
         `);
 
     }
+
+    // adds final total to payment page
+    $(".payment-pg-total").html("")
+    $(".payment-pg-total").append(`
+    <p>Your total: $${total}</p>
+    `);
+
+    // calculates cash
+
+    $(".cash-submitted").on("keyup", function() {
+        let cash = $(this).val();
+        let userChange = (cash-total).toFixed(2);
+    
+        $(".your-change").html("");
+        $(".payment-form-2").append(`
+            <p class="your-change">Your change: $${userChange}</p>
+            `);
+    });
+
+
 }
+
+
+
 
     //event listener to push item to customer product array
 
