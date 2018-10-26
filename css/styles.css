@@ -299,7 +299,7 @@ button:hover {
     display: none;
 }
 
-.payment-form, .payment-form-2 {
+.payment-form {
     display: flex;
     flex-direction: column;
     padding: 20px;
